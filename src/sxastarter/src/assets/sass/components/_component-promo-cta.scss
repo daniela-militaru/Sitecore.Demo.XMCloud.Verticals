@@ -68,6 +68,20 @@
     }
   }
 
+  &.holidaysafe-blue-background-color {
+    background-color: #17548f;
+    color: white;
+    
+    .text-content {
+      color: rgba(255, 255, 255, 0.9);
+      opacity: 1;
+    }
+    
+    .promo-cta-text {
+      color: white;
+    }
+  }
+
   .main-content {
     --bs-gutter-x: 8rem;
     --bs-gutter-y: 3rem;
@@ -151,6 +165,87 @@
     .dotted-accent {
       left: -141px !important;
       right: unset;
+    }
+  }
+
+  // Holidaysafe button styles to match the "Enter Now" button design
+  .button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.3px;
+
+    &.button-main {
+      background-color: #4db8c4;
+      color: white;
+      box-shadow: 0 4px 12px rgba(77, 184, 196, 0.3);
+
+      &:hover {
+        background-color: #3da8b4;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(77, 184, 196, 0.4);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(77, 184, 196, 0.3);
+      }
+    }
+
+    &.button-simple {
+      background-color: transparent;
+      color: #4db8c4;
+      border: 2px solid #4db8c4;
+
+      &:hover {
+        background-color: #4db8c4;
+        color: white;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(77, 184, 196, 0.3);
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(77, 184, 196, 0.3);
+      }
+    }
+  }
+
+  // Override button styles when on blue background
+  &.holidaysafe-blue-background-color {
+    .button {
+      &.button-main {
+        background-color: #4db8c4;
+        color: white;
+        
+        &:hover {
+          background-color: #3da8b4;
+          color: white;
+        }
+      }
+
+      &.button-simple {
+        background-color: transparent;
+        color: white;
+        border-color: white;
+
+        &:hover {
+          background-color: white;
+          color: #17548f;
+          border-color: white;
+        }
+      }
     }
   }
 }

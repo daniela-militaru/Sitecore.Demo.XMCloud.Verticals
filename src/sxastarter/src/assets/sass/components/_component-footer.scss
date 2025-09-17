@@ -1,3 +1,205 @@
+// Holidaysafe Footer Styles
+.holidaysafe-footer {
+  background: linear-gradient(135deg, #2b5a9e 0%, #4a8bc2 100%);
+  color: white;
+  padding: 40px 0 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  // Main footer content
+  .footer-main {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    .footer-column {
+      text-align: center;
+      
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .footer-title {
+      color: white;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 8px;
+        text-align: center;
+
+        a {
+          color: rgba(255, 255, 255, 0.9);
+          text-decoration: none;
+          font-size: 0.95rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  // Trust logos section
+  .trust-logos {
+    padding: 30px 0;
+    margin: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    .trust-logo {
+      max-height: 40px;
+      max-width: 80px;
+      margin: 0 10px;
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+      filter: brightness(1.2);
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @media (max-width: 767px) {
+        max-height: 30px;
+        max-width: 60px;
+        margin: 5px;
+      }
+    }
+
+    .row {
+      @media (max-width: 767px) {
+        justify-content: center !important;
+        text-align: center;
+      }
+    }
+  }
+
+  // Bottom links
+  .footer-bottom-links {
+    margin: 20px 0;
+
+    .bottom-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
+      }
+
+      .separator {
+        color: rgba(255, 255, 255, 0.6);
+        margin: 0 8px;
+
+        @media (max-width: 767px) {
+          display: none;
+        }
+      }
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+
+  // Footer text
+  .footer-text {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.8rem;
+      line-height: 1.5;
+      margin-bottom: 15px;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        text-align: left;
+      }
+    }
+
+    .disclaimer {
+      margin-bottom: 20px;
+    }
+
+    .travel-advice {
+      margin-bottom: 20px;
+    }
+
+    .pricing-note {
+      margin-bottom: 15px;
+    }
+
+    .which-note {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: underline;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: white;
+        text-decoration: underline;
+      }
+
+      &.orange-link {
+        color: #ff8c00;
+        
+        &:hover {
+          color: #e67e00;
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 767px) {
+    padding: 30px 15px 15px;
+
+    .footer-main {
+      .row {
+        text-align: center;
+      }
+
+      .footer-column {
+        margin-bottom: 30px;
+      }
+    }
+
+    .trust-logos {
+      .row {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+// Legacy footer styles (keeping for backwards compatibility)
 .footer {
   background-color: var(--bg-footer);
   color: var(--text-footer);

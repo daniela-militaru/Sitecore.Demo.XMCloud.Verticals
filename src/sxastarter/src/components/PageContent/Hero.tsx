@@ -16,6 +16,7 @@ interface Fields {
   Text: RichTextField;
   Image: ImageField;
   Link: LinkField;
+  Link2: LinkField;
 }
 
 export type AppPromoProps = {
@@ -45,7 +46,10 @@ export const Default = (props: AppPromoProps): JSX.Element => {
         <div className="bottom-layout">
           <div className="btn-array">
             {(isPageEditing || props.fields?.Link?.value?.href) && (
-              <Link field={props.fields.Link} className="button button-main mt-3" />
+              <Link field={props.fields.Link} className="button button-main mt-3 me-3" />
+            )}
+            {(isPageEditing || props.fields?.Link2?.value?.href) && (
+              <Link field={props.fields.Link2} className="button button-simple mt-3" />
             )}
           </div>
         </div>
