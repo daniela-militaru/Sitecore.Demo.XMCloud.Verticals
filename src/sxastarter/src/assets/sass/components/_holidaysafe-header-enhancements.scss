@@ -1,0 +1,267 @@
+// Holidaysafe Header Enhancements
+// Additional styles to complement the main header component
+
+// Enhanced typography for header links
+.holidaysafe-header {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  // Add subtle animation to the main header background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+    opacity: 1;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::before {
+    opacity: 0.95;
+  }
+
+  // Enhanced focus states for accessibility
+  .top-links a:focus,
+  .cta-buttons .btn:focus,
+  .secondary-navigation a:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.8);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  // Add subtle hover effects to the top bar links
+  .header-top-bar {
+    .top-links a {
+      position: relative;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        width: 0;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  // Enhanced button animations
+  .cta-buttons .btn {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s ease;
+      z-index: 0;
+    }
+
+    &:hover::before {
+      width: 200%;
+      height: 200%;
+    }
+
+    span, .arrow {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  // Navigation dropdown enhanced animations
+  .secondary-navigation {
+    li {
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: rgba(255, 255, 255, 0.8);
+        transition: width 0.3s ease;
+      }
+
+      &:hover::before {
+        width: 100%;
+      }
+
+      .dropdown-menu {
+        backdrop-filter: blur(10px);
+        
+        &::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          left: 20px;
+          width: 0;
+          height: 0;
+          border-left: 8px solid transparent;
+          border-right: 8px solid transparent;
+          border-bottom: 8px solid white;
+        }
+      }
+    }
+  }
+
+  // Add loading shimmer effect for logo
+  .logo-section {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: logoShimmer 3s infinite;
+    }
+  }
+
+  @keyframes logoShimmer {
+    0% {
+      left: -100%;
+    }
+    50% {
+      left: 100%;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  // Enhanced mobile menu toggle (if needed)
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 991.98px) {
+      display: block;
+    }
+  }
+
+  // Sticky header enhancement
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    animation: slideDown 0.3s ease;
+
+    .header-top-bar {
+      display: none;
+    }
+
+    .header-main {
+      padding: 12px 0;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  // Print styles
+  @media print {
+    .header-top-bar,
+    .cta-buttons,
+    .header-nav-bar {
+      display: none !important;
+    }
+
+    .header-main {
+      background: white !important;
+      color: black !important;
+      padding: 20px 0 !important;
+    }
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    background: #000 !important;
+    
+    .header-top-bar {
+      background: #333 !important;
+    }
+
+    .cta-buttons .btn {
+      border-width: 3px !important;
+    }
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+
+    &::before {
+      transition: none;
+    }
+
+    .logo-section::after {
+      display: none;
+    }
+  }
+}
+
+// Dark mode support (if theme switching is implemented)
+@media (prefers-color-scheme: dark) {
+  .holidaysafe-header {
+    .dropdown-menu {
+      background: #2d3748;
+      color: white;
+
+      a {
+        color: rgba(255, 255, 255, 0.9);
+
+        &:hover {
+          background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+          color: white;
+        }
+      }
+    }
+  }
+}

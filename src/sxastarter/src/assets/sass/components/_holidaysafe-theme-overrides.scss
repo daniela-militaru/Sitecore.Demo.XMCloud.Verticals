@@ -1,0 +1,343 @@
+// Holidaysafe Theme Overrides
+// This file contains high-specificity overrides to ensure Holidaysafe header styles 
+// work regardless of the site theme (basic, financial, services, etc.)
+
+// Force Holidaysafe header to display with correct styling on all sites
+[class*="site-"] .holidaysafe-header,
+.site-basic .holidaysafe-header,
+.site-financial .holidaysafe-header, 
+.site-services .holidaysafe-header,
+.holidaysafe-header {
+  // Reset any potential theme overrides
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+  
+  // Ensure the header is visible and styled correctly
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  
+  // Force Holidaysafe branding
+  background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%) !important;
+  color: white !important;
+  border: none !important;
+  
+  // Override any theme-specific header styles
+  * {
+    box-sizing: border-box;
+  }
+  
+  // Top bar overrides
+  .header-top-bar {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.1) !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    
+    .container {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 15px !important;
+    }
+    
+    .top-links {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      gap: 0 !important;
+      
+      a {
+        color: rgba(255, 255, 255, 0.95) !important;
+        text-decoration: none !important;
+        font-weight: 400 !important;
+        padding: 4px 8px !important;
+        font-size: 0.85rem !important;
+        transition: color 0.3s ease !important;
+        
+        &:hover,
+        &:focus {
+          color: #fff !important;
+          text-decoration: none !important;
+        }
+      }
+      
+      .separator {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-weight: 300 !important;
+        margin: 0 8px !important;
+        font-size: 0.9rem !important;
+      }
+    }
+  }
+  
+  // Main header overrides
+  .header-main {
+    display: block !important;
+    padding: 18px 0 !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    
+    .container {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 15px !important;
+    }
+    
+    .row {
+      display: flex !important;
+      align-items: center !important;
+      flex-wrap: wrap !important;
+    }
+    
+    .logo-section {
+      img {
+        max-height: 65px !important;
+        width: auto !important;
+        filter: brightness(1.1) !important;
+      }
+    }
+    
+    .main-navigation {
+      margin-left: 30px !important;
+      flex: 1 !important;
+    }
+    
+    .cta-buttons {
+      display: flex !important;
+      gap: 8px !important;
+      align-items: center !important;
+      
+      .btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        border-radius: 3px !important;
+        padding: 8px 16px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        transition: all 0.3s ease !important;
+        border: 2px solid transparent !important;
+        font-size: 0.8rem !important;
+        white-space: nowrap !important;
+        text-transform: none !important;
+        letter-spacing: 0.2px !important;
+        cursor: pointer !important;
+        
+        .arrow {
+          margin-left: 6px !important;
+          font-size: 1em !important;
+          transition: transform 0.3s ease !important;
+        }
+        
+        &:hover,
+        &:focus {
+          text-decoration: none !important;
+          transform: translateY(-1px) !important;
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2) !important;
+          
+          .arrow {
+            transform: translateX(2px) !important;
+          }
+        }
+        
+        &.btn-primary {
+          background: #ff8c00 !important;
+          color: white !important;
+          border-color: #ff8c00 !important;
+          font-weight: 700 !important;
+          box-shadow: 0 2px 8px rgba(255, 140, 0, 0.3) !important;
+          
+          &:hover,
+          &:focus {
+            background: #e67e00 !important;
+            border-color: #e67e00 !important;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4) !important;
+          }
+        }
+        
+        &.btn-secondary {
+          background: #4a8bc2 !important;
+          color: white !important;
+          border-color: #4a8bc2 !important;
+          box-shadow: 0 2px 8px rgba(74, 139, 194, 0.3) !important;
+          
+          &:hover,
+          &:focus {
+            background: #3a7bd5 !important;
+            border-color: #3a7bd5 !important;
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(74, 139, 194, 0.4) !important;
+          }
+        }
+        
+        &.btn-outline {
+          background: transparent !important;
+          color: rgba(255, 255, 255, 0.95) !important;
+          border-color: rgba(255, 255, 255, 0.8) !important;
+          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1) !important;
+          
+          &:hover,
+          &:focus {
+            background: rgba(255, 255, 255, 0.15) !important;
+            border-color: rgba(255, 255, 255, 1) !important;
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2) !important;
+          }
+        }
+      }
+    }
+  }
+  
+  // Secondary navigation overrides
+  .header-nav-bar {
+    display: block !important;
+    background: rgba(0, 0, 0, 0.08) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 14px 0 !important;
+    
+    .container {
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+      padding: 0 15px !important;
+    }
+    
+    .secondary-navigation {
+      ul {
+        display: flex !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 35px !important;
+        
+        li {
+          position: relative !important;
+          
+          a {
+            color: rgba(255, 255, 255, 0.95) !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+            padding: 10px 0 !important;
+            transition: all 0.3s ease !important;
+            display: flex !important;
+            align-items: center !important;
+            font-size: 0.95rem !important;
+            
+            &:hover,
+            &:focus {
+              color: #fff !important;
+              text-shadow: 0 0 8px rgba(255, 255, 255, 0.3) !important;
+            }
+            
+            &:after {
+              content: '▼' !important;
+              font-size: 0.7em !important;
+              margin-left: 10px !important;
+              opacity: 0.8 !important;
+              transition: transform 0.3s ease !important;
+            }
+            
+            &:hover:after {
+              transform: translateY(1px) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Additional overrides for specific themes that might interfere
+.site-financial {
+  .holidaysafe-header {
+    // Override financial theme colors
+    --text-body: white !important;
+    --text-colored: white !important;
+    --bg-body: transparent !important;
+    --bg-main: transparent !important;
+  }
+}
+
+.site-services {
+  .holidaysafe-header {
+    // Override services theme colors
+    --text-body: white !important;
+    --text-colored: white !important;
+    --bg-body: transparent !important;
+    --bg-main: transparent !important;
+  }
+}
+
+// Ensure header component is displayed regardless of theme
+.component.header.holidaysafe-header {
+  display: block !important;
+  width: 100% !important;
+  position: relative !important;
+  z-index: 1000 !important;
+}
+
+// Override any potential Bootstrap or framework conflicts
+.holidaysafe-header {
+  .container-fluid,
+  .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .row {
+    margin-left: -15px !important;
+    margin-right: -15px !important;
+  }
+  
+  .col,
+  .col-auto,
+  [class*="col-"] {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+
+// Responsive overrides
+@media (max-width: 767.98px) {
+  [class*="site-"] .holidaysafe-header,
+  .holidaysafe-header {
+    .header-top-bar {
+      .top-links {
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        
+        .separator {
+          display: none !important;
+        }
+      }
+    }
+    
+    .header-main {
+      .row {
+        flex-direction: column !important;
+        gap: 12px !important;
+        text-align: center !important;
+      }
+      
+      .main-navigation {
+        order: 2 !important;
+        margin-left: 0 !important;
+        margin-top: 8px !important;
+      }
+      
+      .cta-buttons {
+        order: 3 !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        margin-top: 12px !important;
+        
+        .btn {
+          font-size: 0.75rem !important;
+          padding: 8px 14px !important;
+          min-width: 130px !important;
+        }
+      }
+    }
+  }
+}

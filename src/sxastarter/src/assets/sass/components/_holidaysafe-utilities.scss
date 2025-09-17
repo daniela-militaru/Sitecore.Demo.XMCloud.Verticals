@@ -1,0 +1,280 @@
+// Holidaysafe Utility Classes
+// Additional utility classes to support the Holidaysafe brand
+
+// Brand Colors
+:root {
+  --holidaysafe-primary: #3a7bd5;
+  --holidaysafe-secondary: #00d2ff;
+  --holidaysafe-accent: #ff8c00;
+  --holidaysafe-gradient: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
+  --holidaysafe-text-light: rgba(255, 255, 255, 0.95);
+  --holidaysafe-text-medium: rgba(255, 255, 255, 0.8);
+  --holidaysafe-text-subtle: rgba(255, 255, 255, 0.6);
+}
+
+// Utility classes for consistent spacing and styling
+.hs-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.hs-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+
+  &:hover {
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &.hs-btn-primary {
+    background: var(--holidaysafe-accent);
+    color: white;
+    border-color: var(--holidaysafe-accent);
+
+    &:hover {
+      background: #e67e00;
+      border-color: #e67e00;
+      color: white;
+      box-shadow: 0 4px 15px rgba(255, 140, 0, 0.4);
+    }
+  }
+
+  &.hs-btn-secondary {
+    background: var(--holidaysafe-primary);
+    color: white;
+    border-color: var(--holidaysafe-primary);
+
+    &:hover {
+      background: var(--holidaysafe-secondary);
+      border-color: var(--holidaysafe-secondary);
+      color: white;
+    }
+  }
+
+  &.hs-btn-outline {
+    background: transparent;
+    color: var(--holidaysafe-text-light);
+    border-color: var(--holidaysafe-text-medium);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: white;
+      color: white;
+    }
+  }
+
+  &.hs-btn-gradient {
+    background: var(--holidaysafe-gradient);
+    color: white;
+    border: none;
+
+    &:hover {
+      background: linear-gradient(135deg, #2a6bc4 0%, #00c2ef 100%);
+    }
+  }
+}
+
+// Text utilities
+.hs-text-light { color: var(--holidaysafe-text-light); }
+.hs-text-medium { color: var(--holidaysafe-text-medium); }
+.hs-text-subtle { color: var(--holidaysafe-text-subtle); }
+
+// Background utilities
+.hs-bg-gradient {
+  background: var(--holidaysafe-gradient);
+}
+
+.hs-bg-primary {
+  background-color: var(--holidaysafe-primary);
+}
+
+.hs-bg-secondary {
+  background-color: var(--holidaysafe-secondary);
+}
+
+.hs-bg-accent {
+  background-color: var(--holidaysafe-accent);
+}
+
+// Shadow utilities
+.hs-shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hs-shadow-md {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hs-shadow-lg {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.hs-shadow-xl {
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+// Border radius utilities
+.hs-rounded-sm { border-radius: 2px; }
+.hs-rounded { border-radius: 4px; }
+.hs-rounded-md { border-radius: 6px; }
+.hs-rounded-lg { border-radius: 8px; }
+.hs-rounded-xl { border-radius: 12px; }
+.hs-rounded-full { border-radius: 50%; }
+
+// Animation utilities
+.hs-transition {
+  transition: all 0.3s ease;
+}
+
+.hs-transition-fast {
+  transition: all 0.15s ease;
+}
+
+.hs-transition-slow {
+  transition: all 0.5s ease;
+}
+
+// Hover effects
+.hs-hover-lift {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.hs-hover-scale {
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.hs-hover-glow {
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(58, 123, 213, 0.3);
+  }
+}
+
+// Focus utilities for accessibility
+.hs-focus-ring:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+// Typography utilities
+.hs-font-heading {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.hs-font-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+// Responsive utilities
+@media (max-width: 767.98px) {
+  .hs-hide-mobile {
+    display: none !important;
+  }
+
+  .hs-btn {
+    font-size: 0.85rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+  .hs-hide-desktop {
+    display: none !important;
+  }
+}
+
+// Loading states
+.hs-loading {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: hsShimmer 1.5s infinite;
+  }
+}
+
+@keyframes hsShimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+// Accessibility improvements
+@media (prefers-reduced-motion: reduce) {
+  .hs-transition,
+  .hs-transition-fast,
+  .hs-transition-slow,
+  .hs-hover-lift,
+  .hs-hover-scale,
+  .hs-loading::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+// High contrast mode
+@media (prefers-contrast: high) {
+  .hs-btn {
+    border-width: 3px !important;
+  }
+  
+  .hs-text-medium,
+  .hs-text-subtle {
+    color: white !important;
+  }
+}
+
+// Print styles
+@media print {
+  .hs-btn,
+  .hs-shadow-sm,
+  .hs-shadow-md,
+  .hs-shadow-lg,
+  .hs-shadow-xl {
+    box-shadow: none !important;
+  }
+
+  .hs-bg-gradient,
+  .hs-bg-primary,
+  .hs-bg-secondary,
+  .hs-bg-accent {
+    background: white !important;
+    color: black !important;
+  }
+}
