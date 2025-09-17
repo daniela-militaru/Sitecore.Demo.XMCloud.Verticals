@@ -10,15 +10,15 @@ interface HolidaysafeHeaderConfig {
 class HolidaysafeHeader {
   private header: HTMLElement | null;
   private config: HolidaysafeHeaderConfig;
-  private isSticky: boolean = false;
-  private ticking: boolean = false;
+  private isSticky = false;
+  private ticking = false;
 
   constructor(config: Partial<HolidaysafeHeaderConfig> = {}) {
     this.config = {
       stickyOffset: 100,
       animationDuration: 300,
       mobileBreakpoint: 992,
-      ...config
+      ...config,
     };
 
     this.header = document.querySelector('.holidaysafe-header');
@@ -60,7 +60,6 @@ class HolidaysafeHeader {
     } else if (!shouldBeSticky && this.isSticky) {
       this.removeSticky();
     }
-
   }
 
   private makeSticky(): void {
@@ -84,7 +83,7 @@ class HolidaysafeHeader {
   private setupDropdownMenus(): void {
     const dropdownTriggers = document.querySelectorAll('.secondary-navigation li');
 
-    dropdownTriggers.forEach(trigger => {
+    dropdownTriggers.forEach((trigger) => {
       const dropdown = trigger.querySelector('.dropdown-menu');
       if (!dropdown) return;
 
@@ -159,7 +158,7 @@ class HolidaysafeHeader {
     dropdowns.forEach((dropdown, index) => {
       dropdown.setAttribute('role', 'menu');
       dropdown.setAttribute('aria-labelledby', `dropdown-trigger-${index}`);
-      
+
       const trigger = dropdown.parentElement?.querySelector('a');
       if (trigger) {
         trigger.setAttribute('id', `dropdown-trigger-${index}`);
@@ -178,15 +177,15 @@ class HolidaysafeHeader {
 
   private closeAllDropdowns(): void {
     const dropdowns = document.querySelectorAll('.dropdown-menu');
-    dropdowns.forEach(dropdown => {
+    dropdowns.forEach((dropdown) => {
       this.hideDropdown(dropdown as HTMLElement);
     });
   }
 
   private setupButtonAnimations(): void {
     const buttons = document.querySelectorAll('.cta-buttons .btn');
-    
-    buttons.forEach(button => {
+
+    buttons.forEach((button) => {
       button.addEventListener('mouseenter', () => {
         this.animateButton(button as HTMLElement, 'enter');
       });
@@ -207,7 +206,7 @@ class HolidaysafeHeader {
 
   private animateButton(button: HTMLElement, action: 'enter' | 'leave'): void {
     const arrow = button.querySelector('.arrow');
-    
+
     if (action === 'enter') {
       button.style.transform = 'translateY(-2px)';
       if (arrow) {
