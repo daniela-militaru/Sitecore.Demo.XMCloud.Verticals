@@ -22,11 +22,21 @@
     }
 
     .button-main {
-      background-color: var(--text-body);
-      color: var(--bg-body);
+      background-color: #E93B6F;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
 
       &:hover {
-        filter: brightness(85%);
+        background-color: #d12d5a;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
       }
     }
   }

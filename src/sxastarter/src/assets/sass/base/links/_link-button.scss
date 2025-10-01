@@ -1,6 +1,21 @@
 @import 'src/assets/sass/abstracts/vars/colors';
 @import 'src/assets/sass/abstracts/mixins';
 
+// Vitality button styles - matching the pink button design
+.site-vitality {
+  --button-main-color: #fff;
+  --button-main-bg-color: #E93E6B;
+  --button-secondary-color: #E93E6B;
+  --button-simple-color: #E93E6B;
+  --button-padding: 12px 24px;
+  --button-roundness: 0px;
+  --button-font-weight: 600;
+  --button-font-size: 1rem;
+  --button-text-transform: none;
+  --button-hover-bg: #d12d5a;
+  --button-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+}
+
 .site-financial {
   --button-main-color: #fff;
   --button-main-bg-color: var(--bg-saturated);
@@ -31,7 +46,46 @@
   font-size: var(--button-font-size);
   border-radius: var(--button-roundness);
   padding: var(--button-padding);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--button-shadow, none);
+  text-align: center;
+  min-height: 44px; // Accessibility: minimum touch target size
+  background: #E93E6B !important;
+  background-color: #E93E6B !important;
+  color: #fff !important;
+  
+  &:focus {
+    outline: 2px solid rgba(233, 62, 107, 0.3);
+    outline-offset: 2px;
+  }
+
+  &:hover {
+    color: #fff !important;
+    background: #d12d5a !important;
+    background-color: #d12d5a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    min-height: 36px;
+  }
 }
 
 .button-main {
@@ -39,6 +93,7 @@
   color: var(--button-main-color);
   text-transform: var(--button-text-transform);
   border: none;
+  box-shadow: var(--button-shadow, 0 2px 4px rgba(233, 59, 111, 0.2));
 
   a {
     color: var(--button-main-color);
@@ -47,7 +102,14 @@
 
   &:hover {
     color: var(--button-main-color);
-    filter: brightness(125%);
+    background-color: var(--button-hover-bg, #d12d5a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
   }
 }
 
@@ -55,6 +117,7 @@
   border: 2px solid var(--button-secondary-color);
   color: var(--button-secondary-color);
   text-transform: var(--button-text-transform);
+  background-color: transparent;
 
   a {
     color: var(--button-secondary-color);
@@ -62,18 +125,32 @@
   }
 
   &:hover {
-    color: var(--button-secondary-color);
-    filter: brightness(125%);
+    color: #fff;
+    background-color: var(--button-secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
 .button-accent {
   background-color: var(--bg-accent);
   color: var(--button-main-color);
+  box-shadow: var(--button-shadow, 0 2px 4px rgba(233, 59, 111, 0.2));
 
   &:hover {
     color: var(--button-main-color);
-    filter: brightness(85%);
+    background-color: var(--button-hover-bg, #d12d5a);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
   }
 }
 
@@ -103,20 +180,46 @@
 .default {
   @include default-link-button;
 
-  background: #f6f6f6;
-  color: $text-basic;
+  background: #E93E6B !important;
+  background-color: #E93E6B !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+
+  &:hover {
+    color: #fff;
+    background: #d12d5a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  }
 }
 
 .button-success,
 .success {
   @include default-link-button;
 
-  background: $btn-green-light;
-  color: $text-white;
+  background: #E93E6B;
+  color: #fff;
+  border-radius: 0px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
 
   &:hover {
-    color: $text-white;
-    background: $btn-green;
+    color: #fff;
+    background: #d12d5a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
   }
 }
 
@@ -124,11 +227,527 @@
 .warning {
   @include default-link-button;
 
-  background: $btn-red;
-  color: $text-white;
+  background: #E93E6B;
+  color: #fff;
+  border-radius: 0px;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
 
   &:hover {
-    color: $text-white;
-    background: $btn-red-active;
+    color: #fff;
+    background: #d12d5a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  }
+}
+
+// Pink Background Vitality Section
+.pink-background-vitality,
+.component.pink-background-vitality {
+  background: #ee2f60 !important;
+  background-color: #ee2f60 !important;
+  color: #fff;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  // Text styling
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  // Button styling matching the image with light grey background
+  .button,
+  .button-main,
+  .button-secondary,
+  .button-accent,
+  .button-default,
+  .button-success,
+  .button-warning {
+    background: #f5f5f5 !important;
+    background-color: #f5f5f5 !important;
+    color: #333 !important;
+    border: none !important;
+    padding: 14px 28px !important;
+    border-radius: 0px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    min-height: 50px !important;
+    line-height: 1.2 !important;
+
+    &:hover {
+      background: #e8e8e8 !important;
+      background-color: #e8e8e8 !important;
+      color: #333 !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    &:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    &:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+      outline-offset: 2px !important;
+    }
+  }
+
+  // Link styling
+  a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    // Override link styling when it's a button
+    &.button,
+    &.button-main,
+    &.button-secondary,
+    &.button-accent,
+    &.button-default,
+    &.button-success,
+    &.button-warning {
+      background: #f5f5f5 !important;
+      background-color: #f5f5f5 !important;
+      color: #333 !important;
+      border: none !important;
+      padding: 14px 28px !important;
+      border-radius: 0px !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      transition: all 0.3s ease !important;
+      cursor: pointer !important;
+      min-height: 50px !important;
+      line-height: 1.2 !important;
+
+      &:hover {
+        background: #e8e8e8 !important;
+        background-color: #e8e8e8 !important;
+        color: #333 !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      &:active {
+        transform: translateY(0) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      &:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+        outline-offset: 2px !important;
+      }
+    }
+  }
+
+  // Hide promo-cta background when inside pink-background-vitality
+  .promo-cta {
+    background-color: transparent !important;
+    background: transparent !important;
+    
+    .container-widest-fluid {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .container {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .main-content {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .row {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .col-lg-5,
+    .col-md-10,
+    .col-lg-7 {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+  }
+  
+  // Ensure all child elements inherit the pink background
+  * {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .button {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      border-radius: 20px;
+      min-height: 45px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5rem;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      border-radius: 18px;
+      min-height: 40px;
+    }
+  }
+}
+
+// Force override for all button classes to ensure pink color
+.button,
+.button-main,
+.button-secondary,
+.button-accent,
+.button-default,
+.button-success,
+.button-warning {
+  background: #E93E6B !important;
+  background-color: #E93E6B !important;
+  color: #fff !important;
+  border-radius: 0px !important;
+  
+  &:hover {
+    background: #d12d5a !important;
+    background-color: #d12d5a !important;
+    color: #fff !important;
+  }
+}
+
+// Promo component: Make second button same style as first button when pink-background-vitality is NOT applied
+.promo-cta:not(.pink-background-vitality) {
+  // Target all possible second button selectors and make them identical to first button
+  .button-secondary,
+  a.button-secondary,
+  .button-secondary.button,
+  .button-secondary.button-main,
+  .button-secondary.button-default,
+  .button-secondary.button-success,
+  .button-secondary.button-warning,
+  a.button-secondary.button,
+  a.button-secondary.button-main,
+  a.button-secondary.button-default,
+  a.button-secondary.button-success,
+  a.button-secondary.button-warning {
+    // Copy all properties from .button class
+    display: inline-block !important;
+    text-decoration: none !important;
+    font-weight: var(--button-font-weight) !important;
+    font-size: var(--button-font-size) !important;
+    border-radius: var(--button-roundness) !important;
+    padding: var(--button-padding) !important;
+    transition: all 0.3s ease-in-out !important;
+    border: none !important;
+    cursor: pointer !important;
+    box-shadow: var(--button-shadow, none) !important;
+    text-align: center !important;
+    min-height: 44px !important;
+    
+    // Apply pink styling
+    background: #E93E6B !important;
+    background-color: #E93E6B !important;
+    color: #fff !important;
+    border-radius: 0px !important;
+    
+    &:focus {
+      outline: 2px solid rgba(233, 62, 107, 0.3) !important;
+      outline-offset: 2px !important;
+    }
+
+    &:hover {
+      color: #fff !important;
+      background: #d12d5a !important;
+      background-color: #d12d5a !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3) !important;
+    }
+
+    &:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2) !important;
+    }
+  }
+}
+
+// Grey Background Vitality Section
+.grey-background-vitality,
+.component.grey-background-vitality {
+  background: #35404c !important;
+  background-color: #35404c !important;
+  color: #fff;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  // Text styling
+  h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: #fff;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+  }
+
+  // Button styling matching the image
+  .button,
+  .button-main,
+  .button-secondary,
+  .button-accent,
+  .button-default,
+  .button-success,
+  .button-warning {
+    background: #fff !important;
+    background-color: #fff !important;
+    color: #35404c !important;
+    border: 2px solid #fff !important;
+    padding: 14px 28px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    min-height: 50px !important;
+    line-height: 1.2 !important;
+
+    &:hover {
+      background: #f8f9fa !important;
+      background-color: #f8f9fa !important;
+      color: #35404c !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    &:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    &:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+      outline-offset: 2px !important;
+    }
+  }
+
+  // Secondary button style (like "Explore life insurance" in image)
+  .button-secondary {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    padding: 14px 28px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    min-height: 50px !important;
+    line-height: 1.2 !important;
+
+    &:hover {
+      background: #fff !important;
+      background-color: #fff !important;
+      color: #35404c !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+
+    &:active {
+      transform: translateY(0) !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    &:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+      outline-offset: 2px !important;
+    }
+  }
+
+  // Link styling
+  a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    
+    // Override link styling when it's a button
+    &.button,
+    &.button-main,
+    &.button-secondary,
+    &.button-accent,
+    &.button-default,
+    &.button-success,
+    &.button-warning {
+      background: #fff !important;
+      background-color: #fff !important;
+      color: #35404c !important;
+      border: 2px solid #fff !important;
+      padding: 14px 28px !important;
+      border-radius: 6px !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      transition: all 0.3s ease !important;
+      cursor: pointer !important;
+      min-height: 50px !important;
+      line-height: 1.2 !important;
+
+      &:hover {
+        background: #f8f9fa !important;
+        background-color: #f8f9fa !important;
+        color: #35404c !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      &:active {
+        transform: translateY(0) !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      &:focus {
+        outline: 2px solid rgba(255, 255, 255, 0.5) !important;
+        outline-offset: 2px !important;
+      }
+    }
+  }
+
+  // Hide promo-cta background when inside grey-background-vitality
+  .promo-cta {
+    background-color: transparent !important;
+    background: transparent !important;
+    
+    .container-widest-fluid {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .container {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .main-content {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .row {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+    
+    .col-lg-5,
+    .col-md-10,
+    .col-lg-7 {
+      background-color: transparent !important;
+      background: transparent !important;
+    }
+  }
+  
+  // Ensure all child elements inherit the grey background
+  * {
+    background-color: transparent !important;
+    background: transparent !important;
+  }
+
+  // Responsive design
+  @media (max-width: 768px) {
+    padding: 3rem 1.5rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .button {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      min-height: 45px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 2rem 1rem;
+
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5rem;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 0.85rem;
+      border-radius: 4px;
+      min-height: 40px;
+    }
   }
 }

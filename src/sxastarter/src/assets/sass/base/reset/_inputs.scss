@@ -29,11 +29,30 @@ input[type='submit'],
 input[type='reset'],
 input[type='button'],
 button {
-  border: 1px solid $border-basic-color;
-  padding: 5px 20px;
+  border: none;
+  padding: 12px 24px;
+  background: #E93B6F;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
 
   &:hover {
-    background: $bg-light-gray !important;
+    background: #d12d5a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
+  }
+
+  &:focus {
+    outline: 2px solid rgba(233, 59, 111, 0.3);
+    outline-offset: 2px;
   }
 }
 

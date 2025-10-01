@@ -1,3 +1,40 @@
+// Vitality
+.site-vitality {
+  --text-body: #333;
+  --text-body-inverted: #fff;
+  --text-colored: #034c81;
+  --text-footer: #fff;
+  --text-accent: #ff7145;
+  --bg-body: #fff;
+  --bg-footer: #034c81;
+  --bg-main: #f8f9fa;
+  --bg-main-alt: #f8f9fa;
+  --bg-color: #034c81;
+  --bg-saturated: #034c81;
+  --bg-accent: #ff7145;
+  --border-color: #e0e0e0;
+  --hr-color: #e0e0e0;
+  --roundness: 0.5rem;
+
+  .dark & {
+    --text-body: #fff;
+    --text-body-inverted: #333;
+    --text-colored: #034c81;
+    --text-footer: #fff;
+    --text-accent: #ff7145;
+    --bg-body: #1a1a1a;
+    --bg-footer: #034c81;
+    --bg-main: #2a2a2a;
+    --bg-main-alt: #1a1a1a;
+    --bg-color: #034c81;
+    --bg-saturated: #034c81;
+    --bg-accent: #ff7145;
+    --border-color: #404040;
+    --hr-color: #404040;
+    --roundness: 0.5rem;
+  }
+}
+
 // Financial
 .site-financial {
   --text-body: #333;
