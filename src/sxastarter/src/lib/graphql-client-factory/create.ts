@@ -18,14 +18,8 @@ export const createGraphQLClientFactory = (config: JssConfig) => {
       endpoint: getEdgeProxyContentUrl(config.sitecoreEdgeContextId, config.sitecoreEdgeUrl),
     };
   } else if (config.graphQLEndpoint && config.sitecoreApiKey) {
-    // If graphQLEndpoint is a relative path, combine it with sitecoreApiHost
-    let endpoint = config.graphQLEndpoint;
-    if (endpoint.startsWith('/') && config.sitecoreApiHost) {
-      endpoint = `${config.sitecoreApiHost}${endpoint}`;
-    }
-
     clientConfig = {
-      endpoint: endpoint,
+      endpoint: config.graphQLEndpoint,
       apiKey: config.sitecoreApiKey,
     };
   } else {
