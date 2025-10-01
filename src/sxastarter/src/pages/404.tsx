@@ -28,20 +28,29 @@ const Custom404 = (props: SitecorePageProps): JSX.Element => {
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const site = siteResolver.getByName(config.sitecoreSiteName);
-  const errorPagesService = new GraphQLErrorPagesService({
-    clientFactory,
-    siteName: site.name,
-    language: context.locale || config.defaultLanguage,
-    retries:
-      (process.env.GRAPH_QL_SERVICE_RETRIES &&
-        parseInt(process.env.GRAPH_QL_SERVICE_RETRIES, 10)) ||
-      0,
-  });
   let resultErrorPages: ErrorPages | null = null;
 
-  if (!process.env.DISABLE_SSG_FETCH) {
+  // Only fetch error pages if we have valid configuration
+  // Check if we have edge context OR (graphQLEndpoint with apiKey and apiHost for relative paths)
+  const hasValidConfig =
+    config.sitecoreEdgeContextId ||
+    (config.graphQLEndpoint &&
+      config.sitecoreApiKey &&
+      (config.graphQLEndpoint.startsWith('http') ||
+        (config.graphQLEndpoint.startsWith('/') && config.sitecoreApiHost)));
+
+  if (!process.env.DISABLE_SSG_FETCH && hasValidConfig) {
     try {
+      const site = siteResolver.getByName(config.sitecoreSiteName);
+      const errorPagesService = new GraphQLErrorPagesService({
+        clientFactory,
+        siteName: site.name,
+        language: context.locale || config.defaultLanguage,
+        retries:
+          (process.env.GRAPH_QL_SERVICE_RETRIES &&
+            parseInt(process.env.GRAPH_QL_SERVICE_RETRIES, 10)) ||
+          0,
+      });
       resultErrorPages = await errorPagesService.fetchErrorPages();
     } catch (error) {
       console.log('Error occurred while fetching error pages');

@@ -1,9 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import {
-  AxiosDataFetcher,
-  GraphQLSitemapXmlService,
-  AxiosResponse,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { GraphQLSitemapXmlService } from '@sitecore-jss/sitecore-jss-nextjs';
 import { siteResolver } from 'lib/site-resolver';
 import config from 'temp/config';
 import clientFactory from 'lib/graphql-client-factory';
@@ -38,14 +34,17 @@ const sitemapApi = async (
     res.setHeader('Content-Type', 'text/xml;charset=utf-8');
 
     // need to prepare stream from sitemap url
-    return new AxiosDataFetcher()
-      .get(sitemapUrl, {
-        responseType: 'stream',
-      })
-      .then((response: AxiosResponse) => {
-        response.data.pipe(res);
-      })
-      .catch(() => res.redirect('/404'));
+    try {
+      const response = await fetch(sitemapUrl);
+      if (!response.ok) {
+        return res.redirect('/404');
+      }
+
+      const sitemapContent = await response.text();
+      return res.send(sitemapContent);
+    } catch (error) {
+      return res.redirect('/404');
+    }
   }
 
   // this approache if user go to /sitemap.xml - under it generate xml page with list of sitemaps
