@@ -1,0 +1,14 @@
+---
+ID: "d3e4f5a6-b7c8-49d0-9e1f-23456789abcd"
+Parent: "ca2e9c0c-6c0f-4c9f-a2b5-6a7d9e8f0a1b"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/Verticals/Components/MoreRewardsPromo/Data
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a1234567-b89c-4def-8123-4567890abcde"
+

@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  RichText as JssRichText,
-  Field,
-} from '@sitecore-jss/sitecore-jss-nextjs';
+import { RichText as JssRichText, Field } from '@sitecore-jss/sitecore-jss-nextjs';
 
 interface Fields {
   Title: Field<string>;
@@ -27,12 +24,15 @@ const PartnerPromoDefaultComponent = (props: PartnerPromoProps): JSX.Element => 
 
 export const Default = (props: PartnerPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  
+
   if (props.fields) {
     const productName = props.fields.ProductName?.value || 'Apple Watch';
-    
+
     return (
-      <section className={`component partner-promo ${props.params.styles}`} id={id ? id : undefined}>
+      <section
+        className={`component partner-promo ${props.params.styles}`}
+        id={id ? id : undefined}
+      >
         <div className="container">
           <div className="partner-promo-card">
             <div className="partner-promo-content">
@@ -82,4 +82,3 @@ export const Default = (props: PartnerPromoProps): JSX.Element => {
 
   return <PartnerPromoDefaultComponent {...props} />;
 };
-

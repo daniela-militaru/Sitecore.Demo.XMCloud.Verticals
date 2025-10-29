@@ -1,0 +1,20 @@
+---
+ID: "e1b2c3d4-5f67-489a-bc01-23456789abcd"
+Parent: "ca2e9c0c-6c0f-4c9f-a2b5-6a7d9e8f0a1b"
+Template: "ca2e9c0c-6c0f-4c9f-a2b5-6a7d9e8f0a1b"
+Path: /sitecore/templates/Project/Verticals/Components/MoreRewardsPromo/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1f0455dc-9254-4487-b94d-6c66f103e7bf"
+      Hint: Title
+      Value: More rewards, this way
+    - ID: "19611527-1e31-4490-8042-482e61e3ce84"
+      Hint: Description
+      Value: <p>There's loads more rewards you can enjoy with Vitality. Like discounts on Fitbit, Garmin, Polar and Samsung. We picked our rewards specially, to help you get healthier and save money too.</p>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b2345678-c901-4def-8123-567890abcdea"
+
