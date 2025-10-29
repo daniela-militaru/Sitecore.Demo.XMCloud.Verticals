@@ -1,19 +1,19 @@
 @import 'src/assets/sass/abstracts/vars/colors';
 @import 'src/assets/sass/abstracts/mixins';
 
-// Vitality button styles - matching the pink button design
+// Vitality button styles - matching the official Vitality brand guidelines
 .site-vitality {
   --button-main-color: #fff;
-  --button-main-bg-color: #E93E6B;
-  --button-secondary-color: #E93E6B;
-  --button-simple-color: #E93E6B;
-  --button-padding: 12px 24px;
-  --button-roundness: 0px;
+  --button-main-bg-color: #e6007e; // Official Vitality Pink
+  --button-secondary-color: #e6007e;
+  --button-simple-color: #e6007e;
+  --button-padding: 14px 28px;
+  --button-roundness: 4px; // Subtle rounded corners per Vitality guidelines
   --button-font-weight: 600;
   --button-font-size: 1rem;
   --button-text-transform: none;
-  --button-hover-bg: #d12d5a;
-  --button-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  --button-hover-bg: #c20066; // Vitality Pink Dark (from brand colors)
+  --button-shadow: 0 2px 8px rgba(230, 0, 126, 0.2);
 }
 
 .site-financial {
@@ -52,26 +52,26 @@
   box-shadow: var(--button-shadow, none);
   text-align: center;
   min-height: 44px; // Accessibility: minimum touch target size
-  background: #E93E6B !important;
-  background-color: #E93E6B !important;
+  background: #e6007e !important; // Official Vitality Pink
+  background-color: #e6007e !important;
   color: #fff !important;
   
   &:focus {
-    outline: 2px solid rgba(233, 62, 107, 0.3);
+    outline: 2px solid rgba(230, 0, 126, 0.4);
     outline-offset: 2px;
   }
 
   &:hover {
     color: #fff !important;
-    background: #d12d5a !important;
-    background-color: #d12d5a !important;
+    background: #c20066 !important; // Vitality Pink Dark
+    background-color: #c20066 !important;
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 
   // Responsive design
@@ -93,7 +93,7 @@
   color: var(--button-main-color);
   text-transform: var(--button-text-transform);
   border: none;
-  box-shadow: var(--button-shadow, 0 2px 4px rgba(233, 59, 111, 0.2));
+  box-shadow: var(--button-shadow, 0 2px 8px rgba(230, 0, 126, 0.2));
 
   a {
     color: var(--button-main-color);
@@ -102,14 +102,14 @@
 
   &:hover {
     color: var(--button-main-color);
-    background-color: var(--button-hover-bg, #d12d5a);
+    background-color: var(--button-hover-bg, #c20066);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
@@ -128,29 +128,30 @@
     color: #fff;
     background-color: var(--button-secondary-color);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
 .button-accent {
   background-color: var(--bg-accent);
   color: var(--button-main-color);
-  box-shadow: var(--button-shadow, 0 2px 4px rgba(233, 59, 111, 0.2));
+  box-shadow: var(--button-shadow, 0 2px 8px rgba(230, 0, 126, 0.2));
 
   &:hover {
     color: var(--button-main-color);
-    background-color: var(--button-hover-bg, #d12d5a);
+    background-color: var(--button-hover-bg, #c20066);
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 59, 111, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 59, 111, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
@@ -180,23 +181,23 @@
 .default {
   @include default-link-button;
 
-  background: #E93E6B !important;
-  background-color: #E93E6B !important;
+  background: #e6007e !important; // Official Vitality Pink
+  background-color: #e6007e !important;
   color: #fff !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important; // Subtle rounded corners
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  box-shadow: 0 2px 8px rgba(230, 0, 126, 0.2);
 
   &:hover {
     color: #fff;
-    background: #d12d5a;
+    background: #c20066; // Vitality Pink Dark
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
@@ -204,22 +205,22 @@
 .success {
   @include default-link-button;
 
-  background: #E93E6B;
+  background: #e6007e; // Official Vitality Pink
   color: #fff;
-  border-radius: 0px;
+  border-radius: 4px; // Subtle rounded corners
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  box-shadow: 0 2px 8px rgba(230, 0, 126, 0.2);
 
   &:hover {
     color: #fff;
-    background: #d12d5a;
+    background: #c20066; // Vitality Pink Dark
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
@@ -227,22 +228,22 @@
 .warning {
   @include default-link-button;
 
-  background: #E93E6B;
+  background: #e6007e; // Official Vitality Pink
   color: #fff;
-  border-radius: 0px;
+  border-radius: 4px; // Subtle rounded corners
   font-weight: 600;
-  box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+  box-shadow: 0 2px 8px rgba(230, 0, 126, 0.2);
 
   &:hover {
     color: #fff;
-    background: #d12d5a;
+    background: #c20066; // Vitality Pink Dark
     transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3);
+    box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3);
   }
 
   &:active {
     transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2);
+    box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25);
   }
 }
 
@@ -443,7 +444,7 @@
   }
 }
 
-// Force override for all button classes to ensure pink color
+// Force override for all button classes to ensure Vitality brand pink color
 .button,
 .button-main,
 .button-secondary,
@@ -451,14 +452,14 @@
 .button-default,
 .button-success,
 .button-warning {
-  background: #E93E6B !important;
-  background-color: #E93E6B !important;
+  background: #e6007e !important; // Official Vitality Pink
+  background-color: #e6007e !important;
   color: #fff !important;
-  border-radius: 0px !important;
+  border-radius: 4px !important; // Subtle rounded corners per brand guidelines
   
   &:hover {
-    background: #d12d5a !important;
-    background-color: #d12d5a !important;
+    background: #c20066 !important; // Vitality Pink Dark
+    background-color: #c20066 !important;
     color: #fff !important;
   }
 }
@@ -492,28 +493,28 @@
     text-align: center !important;
     min-height: 44px !important;
     
-    // Apply pink styling
-    background: #E93E6B !important;
-    background-color: #E93E6B !important;
+    // Apply Vitality brand pink styling
+    background: #e6007e !important; // Official Vitality Pink
+    background-color: #e6007e !important;
     color: #fff !important;
-    border-radius: 0px !important;
+    border-radius: 4px !important; // Subtle rounded corners
     
     &:focus {
-      outline: 2px solid rgba(233, 62, 107, 0.3) !important;
+      outline: 2px solid rgba(230, 0, 126, 0.4) !important;
       outline-offset: 2px !important;
     }
 
     &:hover {
       color: #fff !important;
-      background: #d12d5a !important;
-      background-color: #d12d5a !important;
+      background: #c20066 !important; // Vitality Pink Dark
+      background-color: #c20066 !important;
       transform: translateY(-1px) !important;
-      box-shadow: 0 4px 8px rgba(233, 62, 107, 0.3) !important;
+      box-shadow: 0 4px 12px rgba(230, 0, 126, 0.3) !important;
     }
 
     &:active {
       transform: translateY(0) !important;
-      box-shadow: 0 2px 4px rgba(233, 62, 107, 0.2) !important;
+      box-shadow: 0 2px 6px rgba(230, 0, 126, 0.25) !important;
     }
   }
 }
