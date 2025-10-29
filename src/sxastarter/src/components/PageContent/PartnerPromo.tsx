@@ -26,8 +26,7 @@ export const Default = (props: PartnerPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
 
   if (props.fields) {
-    const productName = props.fields.ProductName?.value || 'Apple Watch';
-
+    
     return (
       <section
         className={`component partner-promo ${props.params.styles}`}
