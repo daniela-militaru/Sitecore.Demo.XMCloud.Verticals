@@ -121,4 +121,3 @@ export const Default = (props: InsuranceOptionsProps): JSX.Element => {
     </section>
   );
 };
-
