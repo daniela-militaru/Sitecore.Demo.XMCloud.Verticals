@@ -8,11 +8,13 @@
 
   .more-rewards-card {
     border-radius: 1rem; // rounded-2xl
-    padding: 2rem; // p-8
-    background: linear-gradient(90deg, #fff0f6 0%, #f5f0ff 100%); // from-pink-50 to-purple-50
+    padding: 2.5rem; // p-10
+    background: #2f3a46; // dark slate background
+    color: #e5e7eb; // text-gray-200
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 
     @include respond-to(tablet) {
-      padding: 3rem; // md:p-12
+      padding: 3.5rem; // md:p-14
     }
   }
 
@@ -29,20 +31,21 @@
 
   .more-rewards-text {
     h2 {
-      font-size: 2rem; // text-3xl
-      font-weight: 700;
-      color: #111827; // gray-900
-      margin-bottom: 1rem;
+      font-size: 2.25rem; // text-4xl
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
 
       @include respond-to(tablet) {
-        font-size: 2.25rem; // md:text-4xl
+        font-size: 3rem; // md:text-5xl
       }
     }
 
     .description {
       font-size: 1.125rem; // text-lg
-      color: #374151; // gray-700
-      margin-bottom: 1.5rem; // mb-6
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 1.75rem; // mb-7
 
       p {
         margin-bottom: 0.5rem;
@@ -58,18 +61,36 @@
       @include respond-to(tablet) {
         flex-direction: row;
       }
+
+      .button-main {
+        background: #ffffff;
+        color: #111827;
+        border: 2px solid #ffffff;
+        padding: 0.9rem 1.25rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: #ffffff;
+        border: 2px solid rgba(255, 255, 255, 0.85);
+        padding: 0.9rem 1.25rem;
+        border-radius: 0.5rem;
+        font-weight: 700;
+      }
     }
   }
 
   .more-rewards-image {
     display: flex;
     justify-content: center;
+    align-items: center;
     img {
       max-width: 100%;
       height: auto;
       display: block;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
-      border-radius: 0.5rem;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
     }
   }
 }
