@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export const Default = (): JSX.Element => {
-  const [isSystemDark] = useState(false);
 
   // Force light theme on mount and prevent dark mode
   useEffect(() => {
@@ -18,7 +17,7 @@ export const Default = (): JSX.Element => {
         id="theme-switcher"
         type="checkbox"
         checked={false}
-        onChange={() => {}}
+        readOnly
       />
       <span className="theme-switcher-slider"></span>
     </label>
