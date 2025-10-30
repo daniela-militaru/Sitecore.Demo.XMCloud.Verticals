@@ -28,11 +28,42 @@ main {
 }
 
 a {
-  color: $text-basic;
+  background-color: transparent;
+  border: 0;
+  color: var(--vitality-pink);
   cursor: pointer;
+  font-size: inherit;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 0;
+  text-decoration: underline;
 
   &:hover {
-    color: $text-basic-active;
+    color: var(--vitality-pink-dark);
+  }
+}
+
+// Plain links (no class) get animated underline similar to provided example
+a:not([class]) {
+  background-color: transparent;
+  background-image: linear-gradient(rgba(230, 0, 126, 0.2), rgba(230, 0, 126, 0.2)),
+    linear-gradient(var(--vitality-pink), var(--vitality-pink));
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px, 0 1px;
+  border: 0;
+  border-radius: 0;
+  color: var(--vitality-pink);
+  font-size: inherit;
+  font-weight: 600;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  transition: background-size 0.5s, color 0.2s ease-in-out;
+
+  &:hover {
+    background-size: 0 1px, 100% 1px;
+    color: var(--vitality-pink-dark);
   }
 }
 

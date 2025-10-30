@@ -16,6 +16,17 @@
     @include respond-to(tablet) {
       padding: 3.5rem; // md:p-14
     }
+
+    // Globalize pink link styling within the card
+    a {
+      color: var(--vitality-pink);
+      font-weight: 700;
+
+      &:hover {
+        color: var(--vitality-pink-light);
+        text-decoration: underline;
+      }
+    }
   }
 
   .more-rewards-grid {
@@ -50,6 +61,16 @@
       p {
         margin-bottom: 0.5rem;
         &:last-child { margin-bottom: 0; }
+      }
+
+      a {
+        color: var(--vitality-pink);
+        font-weight: 700;
+
+        &:hover {
+          color: var(--vitality-pink-light);
+          text-decoration: underline;
+        }
       }
     }
 
