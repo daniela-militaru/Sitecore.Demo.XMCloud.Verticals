@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import {
   RichText as JssRichText,
   Link as JssLink,
@@ -205,18 +206,18 @@ export const Default = (props: InsuranceOptionsProps): JSX.Element => {
                   <p className="text-sm text-gray-600 mb-6">
                     From £1.45a day<sup>5</sup>
                   </p>
-                  <a
+                  <Link
                     href="/health-insurance/quote"
                     className="block w-full text-center py-3 bg-vitality-pink hover:bg-pink-600 text-white font-semibold rounded transition-colors mb-3"
                   >
                     Get a quote in minutes
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/health-insurance"
                     className="block text-center text-vitality-pink font-semibold hover:underline"
                   >
                     Explore health insurance
-                  </a>
+                  </Link>
                 </div>
 
                 <div className="bg-white rounded-lg shadow-lg p-8">
@@ -286,18 +287,18 @@ export const Default = (props: InsuranceOptionsProps): JSX.Element => {
                   <p className="text-sm text-gray-600 mb-6">
                     From £5 a month<sup>6</sup>
                   </p>
-                  <a
+                  <Link
                     href="/life-insurance/quote"
                     className="block w-full text-center py-3 bg-vitality-pink hover:bg-pink-600 text-white font-semibold rounded transition-colors mb-3"
                   >
                     Get a quote in minutes
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/life-insurance"
                     className="block text-center text-vitality-pink font-semibold hover:underline"
                   >
                     Explore life insurance
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
