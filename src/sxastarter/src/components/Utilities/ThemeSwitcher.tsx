@@ -1,23 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 export const Default = (): JSX.Element => {
-  const [isSystemDark, setIsSystemDark] = useState(false);
+  const [isSystemDark] = useState(false);
 
+  // Force light theme on mount and prevent dark mode
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-color-scheme: dark)');
-
-    if (mq.matches) {
-      setIsSystemDark(true);
-    }
-
-    mq.addEventListener('change', (evt) => {
-      setIsSystemDark(evt.matches);
-    });
+    document.body.classList.remove('dark');
   }, []);
-
-  useEffect(() => {
-    document.body.classList.toggle('dark', isSystemDark);
-  }, [isSystemDark]);
 
   return (
     <label className="theme-switcher">
@@ -28,8 +17,8 @@ export const Default = (): JSX.Element => {
         name="theme-switcher"
         id="theme-switcher"
         type="checkbox"
-        checked={isSystemDark}
-        onChange={() => setIsSystemDark(!isSystemDark)}
+        checked={false}
+        onChange={() => {}}
       />
       <span className="theme-switcher-slider"></span>
     </label>
